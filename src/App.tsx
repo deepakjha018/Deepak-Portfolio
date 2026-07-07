@@ -1,30 +1,29 @@
-function App() {
+import Layout from "./components/common/Layout"
 
-  return (
+import Home from "./pages/Home"
 
-    <main className="
-      min-h-screen
-      flex
-      items-center
-      justify-center
-      bg-[#050816]
-    ">
 
-      <h1 className="
-        text-5xl
-        font-bold
-        gradient-text
-      ">
 
-        Deepak AI Portfolio 🚀
+function App(){
 
-      </h1>
 
-    </main>
+return(
 
-  )
+
+<Layout>
+
+
+<Home />
+
+
+</Layout>
+
+
+)
+
 
 }
+
 
 
 export default App

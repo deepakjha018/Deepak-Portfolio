@@ -2,13 +2,35 @@
 
 
 * {
+  box-sizing: border-box;
+}
 
-margin:0;
 
-padding:0;
+body {
+  margin: 0;
+  padding: 0;
+}
 
-box-sizing:border-box;
 
+/* Give breathing room only to actual content */
+section {
+  padding: 100px 24px;
+}
+
+
+.card,
+.glass-card {
+  padding: 32px;
+}
+
+
+h1,h2,h3,p {
+  margin-bottom: 16px;
+}
+
+
+button {
+  padding: 12px 28px;
 }
 
 
@@ -91,6 +113,9 @@ linear-gradient(
 );
 
 -webkit-background-clip:text;
+background-clip:text;
+/* include vendor prefix for WebKit browsers */
+-webkit-background-clip:text;
 
 -webkit-text-fill-color:transparent;
 
@@ -106,3 +131,241 @@ box-shadow:
 0 0 30px rgba(56,189,248,0.4);
 
 }
+
+@keyframes float {
+
+
+0%{
+
+transform:translateY(0);
+
+}
+
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+
+100%{
+
+transform:translateY(0);
+
+}
+
+
+}
+
+
+
+.float-animation{
+
+animation:
+
+float 5s ease-in-out infinite;
+
+}
+
+.neon-border{
+
+
+border:
+
+1px solid rgba(56,189,248,0.5);
+
+
+box-shadow:
+
+0 0 20px rgba(56,189,248,0.3);
+
+
+}
+
+/* ===== GLOBAL FIXES ===== */
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+
+overflow-x:hidden;
+
+}
+
+
+section{
+
+width:100%;
+
+}
+
+
+.gradient-text{
+
+background:linear-gradient(
+90deg,
+#00d9ff,
+#7c5cff
+);
+
+background-clip:text;
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+
+
+/* glass effect */
+
+.glass{
+
+background:
+linear-gradient(
+135deg,
+rgba(15,23,42,0.85),
+rgba(20,20,55,0.65)
+);
+
+
+backdrop-filter:
+blur(24px);
+
+
+box-shadow:
+
+inset 0 0 30px
+rgba(255,255,255,0.03),
+
+
+0 0 50px
+rgba(0,217,255,0.10);
+
+
+}
+
+/* premium card hover */
+
+.card-hover {
+
+transition:
+transform .35s ease,
+box-shadow .35s ease,
+border-color .35s ease;
+
+}
+
+
+.card-hover:hover {
+
+transform:
+translateY(-12px)
+scale(1.015);
+
+
+border-color:
+rgba(0,217,255,.6);
+
+
+box-shadow:
+
+0 0 30px
+rgba(0,217,255,.25),
+
+0 20px 60px
+rgba(0,0,0,.45);
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+
+  margin:0;
+  overflow-x:hidden;
+
+  background:
+  radial-gradient(circle at top left,#001f2f55,transparent 35%),
+  radial-gradient(circle at bottom right,#39106655,transparent 35%),
+  #020617;
+
+  color:white;
+
+}
+
+
+/* universal section spacing */
+.section-spacing{
+
+padding:100px 0;
+
+}
+
+
+/* universal wrapper */
+.wrapper{
+
+width:90%;
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+
+/* headings */
+
+.section-heading{
+
+font-size:clamp(2.5rem,5vw,4.5rem);
+
+font-weight:900;
+
+text-align:center;
+
+margin-bottom:20px;
+
+background:linear-gradient(
+90deg,
+#00d9ff,
+#8b5cf6
+);
+
+-webkit-background-clip:text;
+
+background-clip:text;
+
+color:transparent;
+
+
+}
+
+
+.section-subtitle{
+
+text-align:center;
+
+color:#94a3b8;
+
+font-size:1.1rem;
+
+margin-bottom:70px;
+
+}
+
