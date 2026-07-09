@@ -10,13 +10,26 @@ import FadeIn from "../animations/FadeIn"
 
 import profile from "../../assets/profile/deepak-profile.jpeg"
 
+import { motion } from "framer-motion"
 
 function Hero(){
 
 
 return(
 
-<section
+<motion.section
+
+initial={{
+opacity:0
+}}
+
+animate={{
+opacity:1
+}}
+
+transition={{
+duration:1
+}}
 
 id="home"
 
@@ -73,7 +86,22 @@ Hi 👋 I'm
 </p>
 
 
-<h1
+<motion.h1
+
+initial={{
+opacity:0,
+y:40
+}}
+
+animate={{
+opacity:1,
+y:0
+}}
+
+transition={{
+duration:.8,
+delay:.3
+}}
 
 className="
 
@@ -93,7 +121,7 @@ mb-6
 
 Deepak Kumar Jha
 
-</h1>
+</motion.h1>
 
 
 
@@ -112,10 +140,6 @@ sequence={[
 
 2000,
 
-
-"Full Stack Developer",
-
-2000,
 
 
 "Problem Solver",
@@ -250,6 +274,106 @@ flex
 
 justify-center
 
+items-center
+
+"
+
+>
+
+
+{/* Outer Aura */}
+
+<motion.div
+
+animate={{
+
+scale:[1,1.08,1],
+
+opacity:[0.5,0.9,0.5]
+
+}}
+
+transition={{
+
+duration:4,
+
+repeat:Infinity,
+
+ease:"easeInOut"
+
+}}
+
+className="
+
+absolute
+
+w-[390px]
+
+h-[390px]
+
+rounded-full
+
+bg-gradient-to-r
+
+from-cyan-400
+
+via-blue-500
+
+to-purple-600
+
+blur-3xl
+
+opacity-50
+
+"
+
+/>
+
+
+
+{/* Rotating Gradient Ring */}
+
+<motion.div
+
+
+animate={{
+
+rotate:360
+
+}}
+
+
+transition={{
+
+duration:20,
+
+repeat:Infinity,
+
+ease:'linear'
+
+}}
+
+
+className="
+
+absolute
+
+w-[365px]
+
+h-[365px]
+
+rounded-full
+
+bg-gradient-to-r
+
+from-cyan-400
+
+via-transparent
+
+to-purple-500
+
+p-[3px]
+
 "
 
 >
@@ -259,20 +383,71 @@ justify-center
 
 className="
 
-absolute
+w-full
 
-w-80
+h-full
 
-h-80
+rounded-full
 
-bg-cyan-500/30
-
-blur-[120px]
+bg-[#050816]
 
 "
 
 />
 
+
+</motion.div>
+
+
+
+
+{/* Profile Image */}
+
+<motion.div
+
+
+animate={{
+
+y:[0,-12,0]
+
+}}
+
+
+whileHover={{
+
+scale:1.06
+
+}}
+
+
+transition={{
+
+duration:5,
+
+repeat:Infinity,
+
+ease:'easeInOut'
+
+}}
+
+
+className="
+
+relative
+
+z-10
+
+rounded-full
+
+p-2
+
+bg-white/5
+
+backdrop-blur-md
+
+"
+
+>
 
 
 <img
@@ -281,19 +456,63 @@ src={profile}
 
 className="
 
-relative
-
 w-80
 
 h-80
 
+rounded-full
+
 object-cover
+
+shadow-[0_0_60px_rgba(34,211,238,.45)]
+
+"
+
+/>
+
+
+</motion.div>
+
+
+
+
+{/* Small Shine Dot */}
+
+<motion.div
+
+animate={{
+
+opacity:[0.2,1,0.2],
+
+scale:[1,1.5,1]
+
+}}
+
+transition={{
+
+duration:3,
+
+repeat:Infinity
+
+}}
+
+className="
+
+absolute
+
+top-12
+
+right-28
+
+w-3
+
+h-3
 
 rounded-full
 
-neon-border
+bg-cyan-300
 
-float-animation
+shadow-[0_0_20px_#22d3ee]
 
 "
 
@@ -310,7 +529,7 @@ float-animation
 </div>
 
 
-</section>
+</motion.section>
 
 
 )

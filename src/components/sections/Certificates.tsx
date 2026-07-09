@@ -4,7 +4,7 @@ import SectionTitle from "../ui/SectionTitle"
 
 import Card from "../ui/Card"
 
-import FadeIn from "../animations/FadeIn"
+import { motion } from "framer-motion"
 
 import { certificates } from "../../data/certificates"
 
@@ -32,7 +32,30 @@ subtitle="Achievements and recognitions"
 />
 
 
-<div
+<motion.div
+
+initial="hidden"
+
+whileInView="show"
+
+viewport={{
+once:true,
+amount:.2
+}}
+
+variants={{
+
+hidden:{},
+
+show:{
+
+transition:{
+staggerChildren:.15
+}
+
+}
+
+}}
 
 className="
 
@@ -55,11 +78,29 @@ gap-8
 certificates.map((item,index)=>(
 
 
-<FadeIn
+<motion.div
 
 key={item.title}
 
-delay={index*0.15}
+variants={{
+
+hidden:{
+opacity:0,
+scale:.85,
+y:40
+},
+
+show:{
+opacity:1,
+scale:1,
+y:0
+}
+
+}}
+
+transition={{
+duration:.6
+}}
 
 >
 
@@ -67,11 +108,31 @@ delay={index*0.15}
 <Card>
 
 
+<motion.div
+
+whileHover={{
+
+rotate:360,
+
+scale:1.2
+
+}}
+
+transition={{
+
+duration:.6
+
+}}
+
+>
+
+
 <Award
 
 className="
 text-cyan-400
 mb-5
+drop-shadow-[0_0_15px_rgba(34,211,238,.8)]
 "
 
 size={45}
@@ -79,11 +140,20 @@ size={45}
 />
 
 
+</motion.div>
+
 <h3
 
 className="
+
 text-xl
+
 font-bold
+
+transition
+
+hover:text-cyan-400
+
 "
 
 >
@@ -127,7 +197,7 @@ mt-4
 </Card>
 
 
-</FadeIn>
+</motion.div>
 
 
 ))
@@ -135,7 +205,7 @@ mt-4
 }
 
 
-</div>
+</motion.div>
 
 
 </Container>

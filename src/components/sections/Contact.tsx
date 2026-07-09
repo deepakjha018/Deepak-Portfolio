@@ -6,8 +6,7 @@ import SectionTitle from "../ui/SectionTitle"
 
 import Card from "../ui/Card"
 
-import FadeIn from "../animations/FadeIn"
-
+import { motion } from "framer-motion"
 
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 
@@ -65,7 +64,27 @@ subtitle="Let's build something amazing together"
 
 
 
-<FadeIn>
+<motion.div
+
+initial={{
+opacity:0,
+y:70
+}}
+
+whileInView={{
+opacity:1,
+y:0
+}}
+
+viewport={{
+once:true
+}}
+
+transition={{
+duration:.7
+}}
+
+>
 
 
 <Card>
@@ -91,7 +110,24 @@ items-start
 
 
 
-<div>
+<motion.div
+
+initial={{
+opacity:0,
+x:-50
+}}
+
+whileInView={{
+opacity:1,
+x:0
+}}
+
+transition={{
+duration:.7,
+delay:.2
+}}
+
+>
 
 
 <h3
@@ -132,24 +168,61 @@ text-cyan-400
 >
 
 
+<motion.div
+whileHover={{scale:1.25,y:-5}}
+>
+
 <FaGithub size={35}/>
+
+</motion.div>
+
+
+<motion.div
+whileHover={{scale:1.25,y:-5}}
+>
 
 <FaLinkedin size={35}/>
 
+</motion.div>
+
+
+<motion.div
+whileHover={{scale:1.25,y:-5}}
+>
+
 <MdEmail size={35}/>
 
-
-</div>
-
+</motion.div>
 
 
 </div>
 
 
 
+</motion.div>
 
 
-<form className="space-y-5">
+
+
+
+<motion.form
+
+initial={{
+opacity:0,
+x:50
+}}
+
+whileInView={{
+opacity:1,
+x:0
+}}
+
+transition={{
+duration:.7,
+delay:.3
+}}
+
+className="space-y-5">
 
 
 <input
@@ -170,6 +243,12 @@ bg-white/5
 border
 border-white/10
 outline-none
+
+focus:border-cyan-400
+
+focus:shadow-[0_0_20px_rgba(34,211,238,.35)]
+
+transition
 "
 
 />
@@ -194,6 +273,12 @@ bg-white/5
 border
 border-white/10
 outline-none
+
+focus:border-cyan-400
+
+focus:shadow-[0_0_20px_rgba(34,211,238,.35)]
+
+transition
 "
 
 />
@@ -221,13 +306,28 @@ bg-white/5
 border
 border-white/10
 outline-none
+
+focus:border-cyan-400
+
+focus:shadow-[0_0_20px_rgba(34,211,238,.35)]
+
+transition
 "
 
 />
 
 
 
-<button
+<motion.button
+
+whileHover={{
+scale:1.08,
+y:-4
+}}
+
+whileTap={{
+scale:.95
+}}
 
 className="
 px-8
@@ -245,11 +345,11 @@ font-bold
 Send Message
 
 
-</button>
+</motion.button>
 
 
 
-</form>
+</motion.form>
 
 
 
@@ -259,7 +359,7 @@ Send Message
 </Card>
 
 
-</FadeIn>
+</motion.div>
 
 
 

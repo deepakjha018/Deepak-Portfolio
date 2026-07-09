@@ -2,7 +2,7 @@ export const experiences=[
 
 {
 company:"Infosys Springboard",
-role:"Artificial Intelligence Intern",
+role:"Python Developer Intern",
 date:"2026",
 
 points:[

@@ -4,7 +4,7 @@ import SectionTitle from "../ui/SectionTitle"
 
 import Card from "../ui/Card"
 
-import FadeIn from "../animations/FadeIn"
+import { motion } from "framer-motion"
 
 import { experiences } from "../../data/experience"
 
@@ -31,15 +31,55 @@ subtitle="Internships and professional journey"
 
 
 
-<div
+<motion.div
+
+initial="hidden"
+
+whileInView="show"
+
+viewport={{
+once:true,
+amount:.2
+}}
+
+variants={{
+
+hidden:{},
+
+show:{
+
+transition:{
+staggerChildren:.25
+}
+
+}
+
+}}
 
 className="
+
+relative
 
 space-y-8
 
 max-w-4xl
 
 mx-auto
+
+
+before:content-['']
+
+before:absolute
+
+before:-left-8
+
+before:top-0
+
+before:h-full
+
+before:w-[2px]
+
+before:bg-cyan-400/30
 
 "
 
@@ -52,14 +92,70 @@ mx-auto
 experiences.map((item,index)=>(
 
 
-<FadeIn
+<motion.div
 
 key={item.company}
 
-delay={index*0.2}
+variants={{
+
+hidden:{
+opacity:0,
+x:-80
+},
+
+show:{
+opacity:1,
+x:0
+}
+
+}}
+
+transition={{
+duration:.7
+}}
+
+className="relative"
 
 >
+<motion.div
 
+initial={{
+scale:0
+}}
+
+whileInView={{
+scale:1
+}}
+
+transition={{
+duration:.5
+}}
+
+className="
+
+absolute
+
+-left-10
+
+top-8
+
+hidden
+
+md:block
+
+w-5
+
+h-5
+
+rounded-full
+
+bg-cyan-400
+
+shadow-[0_0_25px_rgba(34,211,238,.8)]
+
+"
+
+/>
 
 <Card>
 
@@ -142,7 +238,7 @@ className="text-gray-400"
 </Card>
 
 
-</FadeIn>
+</motion.div>
 
 
 ))
@@ -151,7 +247,7 @@ className="text-gray-400"
 }
 
 
-</div>
+</motion.div>
 
 
 

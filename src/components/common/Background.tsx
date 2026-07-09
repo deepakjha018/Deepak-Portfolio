@@ -1,3 +1,6 @@
+import { motion } from "framer-motion"
+
+
 function Background(){
 
 
@@ -40,7 +43,27 @@ bg-[size:60px_60px]
 
 {/* Cyan Orb */}
 
-<div
+<motion.div
+
+animate={{
+
+x:[0,100,0],
+
+y:[0,80,0],
+
+scale:[1,1.2,1]
+
+}}
+
+transition={{
+
+duration:12,
+
+repeat:Infinity,
+
+ease:"easeInOut"
+
+}}
 
 className="
 
@@ -68,7 +91,27 @@ animate-pulse
 
 {/* Purple Orb */}
 
-<div
+<motion.div
+
+animate={{
+
+x:[0,-120,0],
+
+y:[0,-70,0],
+
+scale:[1,1.3,1]
+
+}}
+
+transition={{
+
+duration:15,
+
+repeat:Infinity,
+
+ease:"easeInOut"
+
+}}
 
 className="
 
@@ -92,7 +135,75 @@ animate-pulse
 
 />
 
+{/* Floating AI Particles */}
 
+{
+
+[...Array(25)].map((_,i)=>(
+
+
+<motion.span
+
+key={i}
+
+className="
+
+absolute
+
+w-1
+
+h-1
+
+rounded-full
+
+bg-cyan-400
+
+shadow-[0_0_10px_#22d3ee]
+
+"
+
+
+style={{
+
+left:`${Math.random()*100}%`,
+
+top:`${Math.random()*100}%`
+
+}}
+
+
+animate={{
+
+y:[0,-40,0],
+
+opacity:[.2,1,.2]
+
+}}
+
+
+transition={{
+
+duration:
+
+Math.random()*5+5,
+
+
+repeat:Infinity,
+
+
+delay:
+
+Math.random()*5
+
+}}
+
+
+/>
+
+
+))
+
+}
 
 </div>
 

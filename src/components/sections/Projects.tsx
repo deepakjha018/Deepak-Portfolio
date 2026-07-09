@@ -4,14 +4,13 @@ import Container from "../ui/Container"
 
 import SectionTitle from "../ui/SectionTitle"
 
-import FadeIn from "../animations/FadeIn"
-
 import { projects } from "../../data/projects"
 
 import { FaGithub } from "react-icons/fa"
 
 import { ExternalLink } from "lucide-react"
 
+import { motion } from "framer-motion"
 
 function Projects(){
 
@@ -33,7 +32,29 @@ subtitle="AI systems and applications I built"
 />
 
 
-<div
+<motion.div
+
+initial="hidden"
+
+whileInView="visible"
+
+viewport={{
+once:true
+}}
+
+variants={{
+
+hidden:{},
+
+visible:{
+
+transition:{
+staggerChildren:.2
+}
+
+}
+
+}}
 
 className="
 grid
@@ -55,32 +76,138 @@ gap-10
 projects.map((project,index)=>(
 
 
-<FadeIn
+<motion.div
 
 key={project.title}
 
-delay={index*0.15}
+variants={{
+
+hidden:{
+opacity:0,
+y:60
+},
+
+visible:{
+opacity:1,
+y:0
+}
+
+}}
+
+transition={{
+duration:.6
+}}
 
 >
 
 
-<Card>
-
-
-<img
-
-src={project.image}
+<Card
 
 className="
-rounded-xl
-mb-5
-h-44
-w-full
-object-cover
+group
+relative
+overflow-hidden
+"
+
+>
+<motion.div
+
+className="
+absolute
+inset-0
+
+bg-gradient-to-br
+from-cyan-500/10
+to-purple-500/10
+
+opacity-0
+
+group-hover:opacity-100
+
+transition
+
+duration-500
+
 "
 
 />
 
+<div
+
+className="
+relative
+overflow-hidden
+rounded-xl
+mb-6
+"
+
+>
+
+
+<motion.img
+
+whileHover={{
+
+scale:1.12
+
+}}
+
+transition={{
+
+duration:.5
+
+}}
+
+src={project.image}
+
+className="
+
+h-48
+
+w-full
+
+object-cover
+
+transition
+
+duration-500
+
+"
+
+/>
+
+
+<div
+
+className="
+
+absolute
+
+inset-0
+
+bg-gradient-to-t
+
+from-black/70
+
+via-transparent
+
+to-transparent
+
+
+opacity-0
+
+group-hover:opacity-100
+
+transition
+
+duration-500
+
+"
+
+/>
+
+
+</div>
 
 
 <h3
@@ -90,6 +217,12 @@ text-xl
 font-bold
 text-white
 mb-3
+
+group-hover:text-cyan-400
+
+transition
+
+duration-300
 "
 
 >
@@ -143,19 +276,61 @@ key={item}
 
 
 
-<div className="flex gap-5 mt-6">
+<div 
+
+className="
+flex
+gap-5
+mt-8
+relative
+z-10
+"
+
+>
 
 
 <a href={project.github}>
 
+<motion.div
+
+whileHover={{
+
+scale:1.25,
+
+y:-5,
+
+rotate:8
+
+}}
+
+>
+
 <FaGithub size={24}/>
+
+</motion.div>
 
 </a>
 
 
 <a href={project.demo}>
 
+<motion.div
+
+whileHover={{
+
+scale:1.25,
+
+y:-5,
+
+rotate:-8
+
+}}
+
+>
+
 <ExternalLink size={24}/>
+
+</motion.div>
 
 </a>
 
@@ -167,7 +342,7 @@ key={item}
 </Card>
 
 
-</FadeIn>
+</motion.div>
 
 
 ))
@@ -175,7 +350,7 @@ key={item}
 }
 
 
-</div>
+</motion.div>
 
 
 </Container>

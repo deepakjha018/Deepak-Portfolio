@@ -17,9 +17,10 @@ return(
 
 <Background />
 
+<div className="relative z-10">
+
 <Navbar />
 
-<div className="relative z-10">
 
 
 {children}

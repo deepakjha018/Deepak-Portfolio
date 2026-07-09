@@ -1,4 +1,5 @@
 import type { ReactNode } from "react"
+import { motion } from "framer-motion"
 
 
 interface Props{
@@ -9,43 +10,68 @@ className?:string
 }
 
 
-function Card(
-{
+function Card({
 children,
 className=""
-}:Props
-){
+}:Props){
 
 
 return(
 
-<div
+<motion.div
+
+initial={{
+opacity:0,
+y:40
+}}
+
+whileInView={{
+opacity:1,
+y:0
+}}
+
+viewport={{
+once:true,
+amount:0.2
+}}
+
+transition={{
+duration:0.6,
+ease:"easeOut"
+}}
+
+
+whileHover={{
+y:-10,
+scale:1.02
+}}
+
 
 className={`
 
 glass
 card-hover
-
 rounded-3xl
-
-p-10
-
+p-8
 border
-border-cyan-500/20
+border-white/10
 
 ${className}
 
 `}
 
+
 >
+
 
 {children}
 
 
-</div>
+</motion.div>
 
 
 )
+
 
 }
 

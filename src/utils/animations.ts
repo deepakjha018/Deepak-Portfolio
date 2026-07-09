@@ -1,53 +1,67 @@
 export const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+
+  show: {
+    opacity: 1,
+    y: 0,
+
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
 
 
-hidden:{
+export const fadeLeft = {
+  hidden: {
+    opacity: 0,
+    x: -60,
+  },
 
-opacity:0,
+  show: {
+    opacity: 1,
+    x: 0,
 
-y:50
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
 
-},
 
+export const fadeRight = {
+  hidden: {
+    opacity: 0,
+    x: 60,
+  },
+
+  show: {
+    opacity: 1,
+    x: 0,
+
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+
+export const staggerContainer = {
+
+hidden:{},
 
 show:{
-
-opacity:1,
-
-y:0,
 
 transition:{
-
-duration:0.7
-
+staggerChildren:0.15,
 }
 
 }
 
-
-}
-
-
-
-export const scaleIn = {
-
-
-hidden:{
-
-opacity:0,
-
-scale:0.8
-
-},
-
-
-show:{
-
-opacity:1,
-
-scale:1
-
-}
-
-
-}
+};

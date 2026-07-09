@@ -1,6 +1,8 @@
 import { Menu } from "lucide-react"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
+
+import { motion, AnimatePresence } from "framer-motion"
 
 
 const links = [
@@ -43,11 +45,70 @@ function Navbar(){
 
 const [open,setOpen]=useState(false)
 
+const [active,setActive]=useState("Home")
+
+
+useEffect(()=>{
+
+const handleScroll=()=>{
+
+links.forEach((link)=>{
+
+const section=document.querySelector(link.path)
+
+if(section){
+
+const rect=section.getBoundingClientRect()
+
+if(
+rect.top<=150 &&
+rect.bottom>=150
+){
+
+setActive(link.name)
+
+}
+
+}
+
+})
+
+}
+
+
+window.addEventListener("scroll",handleScroll)
+
+handleScroll()
+
+
+return()=>{
+
+window.removeEventListener("scroll",handleScroll)
+
+}
+
+
+},[])
 
 return(
 
 
-<nav
+<motion.nav
+
+initial={{
+y:-80,
+opacity:0
+}}
+
+animate={{
+y:0,
+opacity:1
+}}
+
+transition={{
+duration:.7,
+ease:"easeOut"
+}}
 
 className="
 
@@ -97,7 +158,15 @@ justify-between
 >
 
 
-<a
+<motion.a
+
+whileHover={{
+scale:1.08
+}}
+
+whileTap={{
+scale:.95
+}}
 
 href="#home"
 
@@ -115,7 +184,7 @@ gradient-text
 
 Deepak.dev
 
-</a>
+</motion.a>
 
 
 
@@ -128,28 +197,76 @@ Deepak.dev
 links.map((item)=>(
 
 
-<a
+<motion.a
+
+whileHover={{
+y:-3
+}}
 
 key={item.name}
 
 href={item.path}
 
-className="
+className={`
 
-text-gray-300
-
-hover:text-cyan-400
+relative
 
 transition
 
-"
+duration-300
+
+${
+active===item.name
+?
+"text-cyan-400"
+:
+"text-gray-300 hover:text-cyan-400"
+}
+
+`}
 
 >
 
 {item.name}
 
 
-</a>
+{
+active===item.name && (
+
+<motion.span
+
+layoutId="navbar-line"
+
+className="
+
+absolute
+
+left-0
+
+-right-0
+
+-mx-1
+
+-bottom-2
+
+h-[3px]
+
+rounded-full
+
+bg-cyan-400
+
+shadow-[0_0_15px_#00d9ff]
+
+"
+
+/>
+
+)
+
+}
+
+
+</motion.a>
 
 
 ))
@@ -181,13 +298,33 @@ onClick={()=>setOpen(!open)}
 
 
 
-{
+<AnimatePresence>
 
+{
 
 open &&
 
 
-<div
+<motion.div
+
+initial={{
+opacity:0,
+y:-20
+}}
+
+animate={{
+opacity:1,
+y:0
+}}
+
+exit={{
+opacity:0,
+y:-20
+}}
+
+transition={{
+duration:.3
+}}
 
 className="
 
@@ -240,13 +377,15 @@ key={item.name}
 }
 
 
-</div>
+</motion.div>
 
 
 }
 
+</AnimatePresence>
 
-</nav>
+
+</motion.nav>
 
 
 )
