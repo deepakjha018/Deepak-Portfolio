@@ -1,75 +1,285 @@
-# React + TypeScript + Vite
+# 🚀 Deepak.dev — AI Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, futuristic, and fully responsive personal portfolio website built to showcase my journey as an **AI & Data Science Engineer**.
 
-Currently, two official plugins are available:
+This portfolio highlights my skills, projects, internships, certifications, and experience in Artificial Intelligence, Machine Learning, Data Science, and Software Development.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🌐 Live Portfolio:  
+https://deepak-portfolio-gamma-nine.vercel.app/
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- ⚡ Modern futuristic UI design
+- 🌌 Animated interactive background
+- 🎨 Dark tech-inspired theme
+- 📱 Fully responsive design
+- 🧠 AI & Data Science focused portfolio
+- 🚀 Smooth animations with Framer Motion
+- 📂 Dynamic projects section
+- 🏆 Certifications showcase
+- 💼 Internship & experience timeline
+- 📄 Resume download integration
+- 📧 Working contact form using EmailJS
+- 🔗 Social media integration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Frontend
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Animation & UI
+- Framer Motion
+- React Icons
+- Lucide React
 
+### Services
+- EmailJS
+- Vercel
+
+### Development Tools
+- Git
+- GitHub
+- VS Code
+
+---
+
+## 📂 Project Structure
+
+```bash
+Deepak-Portfolio/
+
+├── public/
+│   ├── Resume.pdf
+│   └── favicon.svg
+│
+├── src/
+│
+│   ├── assets/
+│   │   ├── certificates/
+│   │   ├── projects/
+│   │   ├── profile/
+│   │   └── icons/
+│
+│   ├── components/
+│   │
+│   │   ├── animations/
+│   │   ├── common/
+│   │   ├── sections/
+│   │   └── ui/
+│
+│   ├── data/
+│   │   ├── certificates.ts
+│   │   ├── projects.ts
+│   │   ├── skills.ts
+│   │   └── experience.ts
+│
+│   ├── hooks/
+│   ├── pages/
+│   ├── styles/
+│   ├── utils/
+│   │
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── index.css
+│
+├── package.json
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 💻 Sections Included
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🏠 Home
+Introduction, role highlight, social links, resume access.
 
+### 👨‍💻 About
+Personal introduction, developer journey, and career focus.
+
+### ⚙️ Skills
+Technologies I work with:
+
+- Python
+- Java
+- TypeScript
+- JavaScript
+- SQL
+- Machine Learning
+- Deep Learning
+- TensorFlow
+- Data Analysis
+- Computer Vision
+- React
+- Git & GitHub
+- MySQL
+- MongoDB
+- VS Code
+
+### 🚀 Projects
+
+Featured AI/Data Science projects:
+
+#### Smart Assessment & Question Generation System
+AI-powered quiz generation and assessment platform.
+
+Tech:
+Python, Django, MySQL, Generative AI, HTML, CSS
+
+---
+
+#### InterviewAce AI
+AI interview preparation assistant.
+
+Tech:
+IBM Watsonx Orchestrate, HTML, CSS, JavaScript
+
+---
+
+#### Garbage Classification System
+Deep Learning based waste classification application.
+
+Tech:
+Python, TensorFlow, CNN, Streamlit
+
+---
+
+#### Employee Salary Prediction
+Machine Learning based salary prediction system.
+
+Tech:
+Python, Scikit-Learn, Pandas, Streamlit
+
+---
+
+#### Fake News Detection
+AI-powered fake news classification system.
+
+Tech:
+Python, Machine Learning, NLP
+
+---
+
+#### Customer Churn Prediction
+Customer behavior prediction ML application.
+
+Tech:
+Python, Machine Learning, Data Analysis
+
+---
+
+## 🏆 Certifications
+
+Includes achievements from:
+
+- NPTEL
+- IBM SkillsBuild
+- Infosys Springboard
+- Google Cloud
+- Oracle
+- Salesforce
+- Tata
+- AI & Data Science programs
+
+---
+
+## 💼 Experience
+
+Internship experience in:
+
+- Artificial Intelligence
+- Machine Learning
+- Data Science
+- Python Development
+- Generative AI
+
+---
+
+## ⚙️ Installation & Setup
+
+Clone repository:
+
+```bash
+git clone https://github.com/deepakjha018/Deepak-Portfolio.git
 ```
+
+Move into project:
+
+```bash
+cd Deepak-Portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+Create production build:
+
+```bash
+npm run build
+```
+
+---
+
+## 🔐 Environment Variables
+
+Create `.env` file:
+
+```env
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+---
+
+## 🚀 Deployment
+
+Deployed using Vercel.
+
+Automatic deployment enabled through GitHub integration.
+
+Every push to the main branch updates the live website.
+
+---
+
+## 🔗 Connect With Me
+
+GitHub:  
+https://github.com/deepakjha018
+
+LinkedIn:  
+https://www.linkedin.com/
+
+Portfolio:  
+https://deepak-portfolio-gamma-nine.vercel.app/
+
+Email:  
+Available through portfolio contact form.
+
+---
+
+## 👨‍💻 Developer
+
+**Deepak Kumar Jha**
+
+AI & Data Science Engineer  
+Building intelligent AI-powered applications using Machine Learning, Deep Learning, and modern software technologies.
+
+---
+
+⭐ If you like this portfolio, consider giving the repository a star.
