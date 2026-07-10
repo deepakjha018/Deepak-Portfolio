@@ -27,7 +27,7 @@ return(
 
 title="Projects"
 
-subtitle="AI systems and applications I built"
+subtitle="Building intelligent solutions with AI, data, and modern technologies"
 
 />
 
@@ -73,7 +73,7 @@ gap-10
 
 {
 
-projects.map((project,index)=>(
+projects.map((project)=>(
 
 
 <motion.div
@@ -162,7 +162,7 @@ src={project.image}
 
 className="
 
-h-48
+h-40
 
 w-full
 
@@ -233,7 +233,12 @@ duration-300
 
 
 
-<p className="text-gray-400">
+<p 
+className="
+text-gray-400
+leading-7
+"
+>
 
 {project.description}
 
@@ -289,7 +294,11 @@ z-10
 >
 
 
-<a href={project.github}>
+<a 
+href={project.github}
+target="_blank"
+rel="noopener noreferrer"
+>
 
 <motion.div
 
@@ -312,7 +321,11 @@ rotate:8
 </a>
 
 
-<a href={project.demo}>
+<a 
+href={project.demo}
+target="_blank"
+rel="noopener noreferrer"
+>
 
 <motion.div
 

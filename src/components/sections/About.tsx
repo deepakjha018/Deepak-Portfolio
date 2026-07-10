@@ -11,13 +11,13 @@ import FadeIn from "../animations/FadeIn"
 const stats=[
 
 {
-number:"5+",
-label:"Projects"
+number:"6+",
+label:"Live Projects"
 },
 
 {
-number:"15+",
-label:"Certificates"
+number:"5",
+label:"Internships"
 },
 
 {
@@ -88,7 +88,7 @@ mb-5
 
 >
 
-AI & Data Science Engineer
+AI Developer & Data Science Engineer
 
 </h3>
 
@@ -104,15 +104,16 @@ text-lg
 
 leading-8
 
+mt-5
+
 "
 
 >
 
-I am a B.Tech Artificial Intelligence & Data Science
-student passionate about building intelligent applications
-using Machine Learning, Deep Learning, Data Science and
-modern software development technologies.
-
+I have hands-on experience through multiple internships and
+projects, building AI-powered applications involving predictive
+analytics, computer vision, NLP, automation, and full-stack
+development.
 
 </p>
 

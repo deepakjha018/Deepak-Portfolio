@@ -198,16 +198,22 @@ Deep Learning and modern software technologies.
 <div className="flex gap-5 mt-8">
 
 
+<a href="#projects">
+
 <Button>
 
 View Projects
 
 </Button>
 
+</a>
+
 
 <a
 
 href="/Deepak-Kumar-Jha-Resume.pdf"
+
+target="_blank"
 
 >
 
@@ -242,14 +248,33 @@ text-cyan-400
 
 >
 
+<a
+href="https://github.com/deepakjha018"
+target="_blank"
+>
 
 <FaGithub size={30}/>
 
+</a>
+
+
+<a
+href="https://www.linkedin.com/in/deepak-kumar-jha-a648553288"
+target="_blank"
+>
+
 <FaLinkedin size={30}/>
+
+</a>
+
+
+<a
+href="#contact"
+>
 
 <MdEmail size={30}/>
 
-
+</a>
 </div>
 
 

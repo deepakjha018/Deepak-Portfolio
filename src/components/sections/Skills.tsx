@@ -26,9 +26,11 @@ items:[
 
 "Java",
 
-"TypeScript",
+"C++",
 
 "JavaScript",
+
+"TypeScript",
 
 "SQL"
 
@@ -51,7 +53,11 @@ items:[
 
 "TensorFlow",
 
-"Data Analysis",
+"Scikit-Learn",
+
+"Pandas",
+
+"NumPy",
 
 "Computer Vision"
 
@@ -70,6 +76,10 @@ items:[
 
 "React",
 
+"Django",
+
+"FastAPI",
+
 "Git",
 
 "GitHub",
@@ -85,7 +95,6 @@ items:[
 }
 
 ]
-
 
 
 function Skills(){
@@ -152,7 +161,7 @@ gap-8
 {
 
 
-skillGroups.map((group,index)=>(
+skillGroups.map((group)=>(
 
 
 <motion.div

@@ -8,9 +8,9 @@ import Card from "../ui/Card"
 
 import { motion } from "framer-motion"
 
-import { FaGithub, FaLinkedin } from "react-icons/fa"
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa"
 
-import { MdEmail } from "react-icons/md"
+import emailjs from "@emailjs/browser"
 
 
 
@@ -44,7 +44,76 @@ setForm({
 
 }
 
+function handleSubmit(e:React.FormEvent){
 
+e.preventDefault()
+
+
+emailjs.send(
+
+import.meta.env.VITE_EMAILJS_SERVICE_ID,
+
+import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+
+{
+
+from_name: form.name,
+
+from_email: form.email,
+
+message: form.message,
+
+},
+
+import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+)
+
+.then(()=>{
+
+
+alert("Message sent successfully 🚀")
+
+
+setForm({
+
+name:"",
+
+email:"",
+
+message:""
+
+})
+
+
+})
+
+
+.catch(()=>{
+
+
+alert("Something went wrong. Please try again.")
+
+
+})
+
+
+}
+
+
+
+function copyEmail(){
+
+navigator.clipboard.writeText(
+
+"deepak2004jha@gmail.com"
+
+)
+
+
+alert("Email copied 📧")
+
+}
 
 return(
 
@@ -87,12 +156,55 @@ duration:.7
 >
 
 
-<Card>
+<Card
+
+className="
+
+relative
+
+overflow-hidden
+
+group
+
+"
+
+>
+<div
+
+className="
+
+absolute
+
+inset-0
+
+bg-gradient-to-br
+
+from-cyan-500/10
+
+via-transparent
+
+to-purple-500/10
+
+opacity-0
+
+group-hover:opacity-100
+
+transition
+
+duration-500
+
+"
+
+/>
 
 
 <div
 
 className="
+
+relative
+
+z-10
 
 grid
 
@@ -168,31 +280,142 @@ text-cyan-400
 >
 
 
-<motion.div
-whileHover={{scale:1.25,y:-5}}
+<motion.a
+
+href="https://github.com/deepakjha018"
+
+target="_blank"
+
+whileHover={{
+scale:1.25,
+y:-5
+}}
+
+className="
+
+w-14
+
+h-14
+
+rounded-full
+
+flex
+
+items-center
+
+justify-center
+
+bg-cyan-500/10
+
+border
+
+border-cyan-400/30
+
+hover:shadow-[0_0_25px_rgba(34,211,238,.5)]
+
+transition
+
+"
+
 >
 
 <FaGithub size={35}/>
 
-</motion.div>
+</motion.a>
 
 
-<motion.div
-whileHover={{scale:1.25,y:-5}}
+<motion.a
+
+href="https://www.linkedin.com/in/deepak-kumar-jha-a64855328"
+
+target="_blank"
+
+whileHover={{
+scale:1.25,
+y:-5
+}}
+
+className="
+
+w-14
+
+h-14
+
+rounded-full
+
+flex
+
+items-center
+
+justify-center
+
+bg-cyan-500/10
+
+border
+
+border-cyan-400/30
+
+hover:shadow-[0_0_25px_rgba(34,211,238,.5)]
+
+transition
+
+"
+
 >
 
 <FaLinkedin size={35}/>
 
-</motion.div>
+</motion.a>
 
 
-<motion.div
-whileHover={{scale:1.25,y:-5}}
+<motion.a
+
+href="#"
+
+onClick={(e)=>{
+
+e.preventDefault()
+
+copyEmail()
+
+}}
+
+whileHover={{
+scale:1.25,
+y:-5
+}}
+
+className="
+
+w-14
+
+h-14
+
+rounded-full
+
+flex
+
+items-center
+
+justify-center
+
+bg-cyan-500/10
+
+border
+
+border-cyan-400/30
+
+hover:shadow-[0_0_25px_rgba(34,211,238,.5)]
+
+transition
+
+"
+
 >
 
-<MdEmail size={35}/>
+<FaEnvelope size={30}/>
 
-</motion.div>
+</motion.a>
 
 
 </div>
@@ -206,6 +429,8 @@ whileHover={{scale:1.25,y:-5}}
 
 
 <motion.form
+
+onSubmit={handleSubmit}
 
 initial={{
 opacity:0,
@@ -320,6 +545,8 @@ transition
 
 <motion.button
 
+type="submit"
+
 whileHover={{
 scale:1.08,
 y:-4
@@ -330,13 +557,29 @@ scale:.95
 }}
 
 className="
-px-8
-py-3
+
+px-10
+
+py-4
+
 rounded-full
+
 bg-gradient-to-r
+
 from-cyan-400
+
 to-purple-500
+
 font-bold
+
+text-white
+
+shadow-[0_0_25px_rgba(34,211,238,.35)]
+
+hover:shadow-[0_0_40px_rgba(34,211,238,.7)]
+
+transition
+
 "
 
 >

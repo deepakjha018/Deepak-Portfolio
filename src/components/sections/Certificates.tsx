@@ -8,7 +8,6 @@ import { motion } from "framer-motion"
 
 import { certificates } from "../../data/certificates"
 
-import { Award } from "lucide-react"
 
 
 
@@ -27,7 +26,7 @@ return(
 
 title="Certificates"
 
-subtitle="Achievements and recognitions"
+subtitle="Professional certifications, achievements and continuous learning"
 
 />
 
@@ -75,7 +74,7 @@ gap-8
 
 {
 
-certificates.map((item,index)=>(
+certificates.map((item)=>(
 
 
 <motion.div
@@ -105,42 +104,148 @@ duration:.6
 >
 
 
-<Card>
+<Card
 
+className="
 
-<motion.div
+relative
 
-whileHover={{
+overflow-hidden
 
-rotate:360,
+group
 
-scale:1.2
+p-0
 
-}}
-
-transition={{
-
-duration:.6
-
-}}
+"
 
 >
 
 
-<Award
+<motion.div
 
 className="
-text-cyan-400
-mb-5
-drop-shadow-[0_0_15px_rgba(34,211,238,.8)]
-"
 
-size={45}
+absolute
+
+inset-0
+
+bg-gradient-to-br
+
+from-cyan-500/10
+
+via-transparent
+
+to-purple-500/10
+
+opacity-0
+
+group-hover:opacity-100
+
+transition
+
+duration-500
+
+"
 
 />
 
 
-</motion.div>
+
+<a
+
+href={item.image}
+
+target="_blank"
+
+rel="noopener noreferrer"
+
+className="
+
+block
+
+relative
+
+z-10
+
+h-56
+
+overflow-hidden
+
+rounded-t-3xl
+
+cursor-pointer
+
+"
+
+>
+
+
+<img
+
+src={item.image}
+
+alt={item.title}
+
+className="
+
+w-full
+
+h-full
+
+object-cover
+
+transition-transform
+
+duration-500
+
+group-hover:scale-110
+
+"
+
+/>
+
+
+</a>
+
+
+
+
+<div
+
+className="
+
+relative
+
+z-10
+
+p-7
+
+"
+
+>
+
+
+
+<p
+
+className="
+
+text-cyan-400
+
+text-sm
+
+mb-3
+
+"
+
+>
+
+{item.category}
+
+</p>
+
+
+
 
 <h3
 
@@ -150,9 +255,13 @@ text-xl
 
 font-bold
 
+text-white
+
+group-hover:text-cyan-400
+
 transition
 
-hover:text-cyan-400
+duration-300
 
 "
 
@@ -164,11 +273,15 @@ hover:text-cyan-400
 
 
 
+
 <p
 
 className="
+
 text-gray-400
+
 mt-3
+
 "
 
 >
@@ -179,11 +292,52 @@ mt-3
 
 
 
+
 <p
 
 className="
-text-purple-400
+
+text-gray-300
+
+text-sm
+
 mt-4
+
+"
+
+>
+
+{item.highlight}
+
+</p>
+
+
+
+
+<p
+
+className="
+
+inline-block
+
+mt-5
+
+px-4
+
+py-2
+
+rounded-full
+
+bg-purple-500/10
+
+border
+
+border-purple-400/30
+
+text-purple-300
+
+text-sm
+
 "
 
 >
@@ -192,6 +346,8 @@ mt-4
 
 </p>
 
+
+</div>
 
 
 </Card>

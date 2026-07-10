@@ -1,6 +1,7 @@
 import type { ReactNode } from "react"
 import Navbar from "./Navbar"
 import Background from "./Background"
+import Footer from "./Footer"
 
 
 function Layout({
@@ -21,9 +22,9 @@ return(
 
 <Navbar />
 
-
-
 {children}
+
+<Footer />
 
 
 </div>

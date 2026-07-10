@@ -33,6 +33,11 @@ path:"#experience"
 },
 
 {
+name:"Certificates",
+path:"#certificates"
+},
+
+{
 name:"Contact",
 path:"#contact"
 }

@@ -89,7 +89,7 @@ before:bg-cyan-400/30
 {
 
 
-experiences.map((item,index)=>(
+experiences.map((item)=>(
 
 
 <motion.div
@@ -119,16 +119,18 @@ className="relative"
 >
 <motion.div
 
-initial={{
-scale:0
-}}
+animate={{
 
-whileInView={{
-scale:1
+scale:[1,1.3,1]
+
 }}
 
 transition={{
-duration:.5
+
+duration:2,
+
+repeat:Infinity
+
 }}
 
 className="
@@ -151,16 +153,71 @@ rounded-full
 
 bg-cyan-400
 
-shadow-[0_0_25px_rgba(34,211,238,.8)]
+shadow-[0_0_30px_#22d3ee]
 
 "
 
 />
 
-<Card>
+<Card
+
+className="
+
+relative
+
+overflow-hidden
+
+group
+
+"
+
+>
+<div
+
+className="
+
+absolute
+
+inset-0
+
+bg-gradient-to-r
+
+from-cyan-500/10
+
+to-purple-500/10
+
+opacity-0
+
+group-hover:opacity-100
+
+transition
+
+duration-500
+
+"
+
+/>
 
 
-<div className="flex justify-between flex-wrap">
+<div 
+
+className="
+
+relative
+
+z-10
+
+flex
+
+justify-between
+
+flex-wrap
+
+gap-4
+
+"
+
+>
 
 
 <div>
@@ -169,9 +226,19 @@ shadow-[0_0_25px_rgba(34,211,238,.8)]
 <h3
 
 className="
+
 text-2xl
+
 font-bold
-text-cyan-400
+
+text-white
+
+group-hover:text-cyan-400
+
+transition
+
+duration-300
+
 "
 
 >
@@ -192,7 +259,29 @@ text-cyan-400
 
 
 
-<span className="text-purple-400">
+<span 
+
+className="
+
+h-fit
+
+px-4
+
+py-2
+
+rounded-full
+
+bg-purple-500/10
+
+border
+
+border-purple-400/30
+
+text-purple-300
+
+"
+
+>
 
 
 {item.date}
@@ -206,7 +295,21 @@ text-cyan-400
 
 
 
-<ul className="mt-5 space-y-2">
+<ul 
+
+className="
+
+relative
+
+z-10
+
+mt-6
+
+space-y-3
+
+"
+
+>
 
 
 {
@@ -218,7 +321,17 @@ item.points.map(point=>(
 
 key={point}
 
-className="text-gray-400"
+className="
+
+text-gray-400
+
+hover:text-white
+
+transition
+
+duration-300
+
+"
 
 >
 
