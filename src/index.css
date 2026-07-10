@@ -382,3 +382,114 @@ button{
 cursor:none;
 
 }
+
+/* =====================================
+   MOBILE ONLY RESPONSIVE FIX
+===================================== */
+
+@media(max-width:768px){
+
+
+section{
+padding-top:50px !important;
+padding-bottom:50px !important;
+}
+
+
+h1{
+font-size:3.5rem !important;
+line-height:1.05 !important;
+}
+
+
+h2{
+font-size:3rem !important;
+}
+
+
+h3{
+font-size:2rem !important;
+}
+
+
+p{
+font-size:1rem !important;
+line-height:1.7 !important;
+}
+
+
+/* Cards */
+
+.glass{
+
+padding:1.5rem !important;
+
+border-radius:1.5rem !important;
+
+}
+
+
+/* hero image */
+
+#home img{
+
+width:260px !important;
+height:260px !important;
+
+}
+
+
+#home{
+
+padding-top:80px;
+
+}
+
+
+/* buttons */
+
+button{
+
+padding:12px 24px !important;
+
+}
+
+
+/* project cards */
+
+#projects img{
+
+height:180px !important;
+
+}
+
+
+#projects .glass{
+
+max-width:90vw;
+
+margin:auto;
+
+}
+
+
+/* contact */
+
+input,
+textarea{
+
+padding:14px !important;
+
+}
+
+
+/* disable expensive mobile hover */
+
+.card-hover:hover{
+
+transform:none !important;
+
+}
+
+
+}

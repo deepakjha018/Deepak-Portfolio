@@ -35,7 +35,8 @@ id="home"
 
 className="
 
-min-h-[90vh]
+min-h-screen
+md:min-h-[90vh]
 
 flex
 
@@ -104,17 +105,13 @@ delay:.3
 }}
 
 className="
-
-text-5xl
-
+text-4xl
+sm:text-5xl
 md:text-7xl
-
 font-bold
-
 gradient-text
-
-mb-6
-
+mb-4
+md:mb-6
 "
 
 >
@@ -332,9 +329,11 @@ className="
 
 absolute
 
-w-[390px]
+w-[260px]
+h-[260px]
 
-h-[390px]
+md:w-[390px]
+md:h-[390px]
 
 rounded-full
 
@@ -383,9 +382,11 @@ className="
 
 absolute
 
-w-[365px]
+w-[240px]
+h-[240px]
 
-h-[365px]
+md:w-[365px]
+md:h-[365px]
 
 rounded-full
 
@@ -481,9 +482,11 @@ src={profile}
 
 className="
 
-w-80
+w-56
+h-56
 
-h-80
+md:w-80
+md:h-80
 
 rounded-full
 
