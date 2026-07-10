@@ -39,7 +39,7 @@ whileInView="show"
 
 viewport={{
 once:true,
-amount:.2
+amount: 0.05
 }}
 
 variants={{
@@ -99,6 +99,11 @@ y:0
 
 transition={{
 duration:.6
+}}
+
+viewport={{
+  once:true,
+  amount:0.05
 }}
 
 >
