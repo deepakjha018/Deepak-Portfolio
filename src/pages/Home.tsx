@@ -4,6 +4,8 @@ About,
 Skills,
 Projects,
 Experience,
+Education,
+Achievements,
 Certificates,
 Contact
 
@@ -26,6 +28,10 @@ return(
 <Projects/>
 
 <Experience/>
+
+<Education/>
+
+<Achievements/>
 
 <Certificates/>
 

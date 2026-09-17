@@ -33,6 +33,16 @@ path:"#experience"
 },
 
 {
+name:"Education",
+path:"#education"
+},
+
+{
+name:"Achievements",
+path:"#achievements"
+},
+
+{
 name:"Certificates",
 path:"#certificates"
 },
@@ -94,6 +104,13 @@ window.removeEventListener("scroll",handleScroll)
 
 
 },[])
+
+
+// Close mobile menu after selecting a section
+const handleMobileClick = () => {
+setOpen(false)
+}
+
 
 return(
 
@@ -194,7 +211,7 @@ Deepak.dev
 
 
 
-<div className="hidden md:flex gap-8">
+<div className="hidden md:flex gap-6">
 
 
 {
@@ -276,6 +293,7 @@ shadow-[0_0_15px_#00d9ff]
 
 ))
 
+
 }
 
 
@@ -289,8 +307,9 @@ className="md:hidden text-white"
 
 onClick={()=>setOpen(!open)}
 
->
+aria-label="Toggle navigation menu"
 
+>
 
 <Menu />
 
@@ -362,10 +381,13 @@ links.map((item)=>(
 
 <a
 
-
 href={item.path}
 
 key={item.name}
+
+onClick={handleMobileClick}
+
+className="text-gray-300 hover:text-cyan-400 transition"
 
 >
 

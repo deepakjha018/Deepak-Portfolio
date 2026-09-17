@@ -8,6 +8,10 @@ export {default as Projects} from "./Projects"
 
 export {default as Experience} from "./Experience"
 
+export { default as Education } from "./Education"
+
+export { default as Achievements } from "./Achievements"
+
 export {default as Certificates} from "./Certificates"
 
 export {default as Contact} from "./Contact"

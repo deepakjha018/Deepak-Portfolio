@@ -8,227 +8,148 @@ import FadeIn from "../animations/FadeIn"
 
 
 
-const stats=[
+const stats = [
 
-{
-number:"6+",
-label:"Live Projects"
-},
+  {
+    number: "6+",
+    label: "Live Projects"
+  },
 
-{
-number:"5",
-label:"Internships"
-},
+  {
+    number: "6+",
+    label: "Internships & Training"
+  },
 
-{
-number:"10+",
-label:"Technologies"
-}
+  {
+    number: "10+",
+    label: "Technologies"
+  }
 
 ]
 
 
-function About(){
 
+function About() {
+
+  return (
+
+    <section id="about">
+
+      <Container>
+
+        <SectionTitle
+          title="About Me"
+          subtitle="Who I am and what I build"
+        />
+
+
+        <FadeIn>
+
+          <div
+            className="
+              grid
+              grid-cols-1
+              lg:grid-cols-2
+              gap-16
+              items-center
+            "
+          >
 
-return(
+            <div>
 
-<section id="about">
+              <h3
+                className="
+                  text-3xl
+                  font-bold
+                  mb-5
+                "
+              >
+                AI Developer & Data Science Engineer
+              </h3>
 
 
-<Container>
+              <p
+                className="
+                  text-gray-400
+                  text-lg
+                  leading-8
+                  mt-5
+                "
+              >
+                I am an Artificial Intelligence & Data Science
+                undergraduate with hands-on experience through
+                internships and real-world projects. I build
+                intelligent applications using Machine Learning,
+                Deep Learning, NLP, Computer Vision, Generative AI
+                and Agentic AI.
+              </p>
 
 
-<SectionTitle
+              <p
+                className="
+                  text-gray-400
+                  text-lg
+                  leading-8
+                  mt-5
+                "
+              >
+                My experience also includes full-stack development,
+                data analysis and AI-powered applications. I enjoy
+                solving real-world problems by combining AI,
+                engineering and creativity to build practical
+                solutions.
+              </p>
 
-title="About Me"
+            </div>
 
-subtitle="Who I am and what I build"
 
-/>
 
+            <div
+              className="
+                grid
+                gap-5
+              "
+            >
 
+              {
+                stats.map((item) => (
 
-<FadeIn>
+                  <Card
+                    key={item.label}
+                    className="text-center"
+                  >
 
+                    <h2
+                      className="
+                        text-5xl
+                        font-bold
+                        gradient-text
+                      "
+                    >
+                      {item.number}
+                    </h2>
 
-<div
 
-className="
+                    <p className="text-gray-300 mt-2">
+                      {item.label}
+                    </p>
 
-grid
+                  </Card>
 
-grid-cols-1
+                ))
+              }
 
-lg:grid-cols-2
+            </div>
 
-gap-16
+          </div>
 
-items-center
+        </FadeIn>
 
-"
+      </Container>
 
->
+    </section>
 
-
-<div>
-
-
-<h3
-
-className="
-
-text-3xl
-
-font-bold
-
-mb-5
-
-"
-
->
-
-AI Developer & Data Science Engineer
-
-</h3>
-
-
-
-<p
-
-className="
-
-text-gray-400
-
-text-lg
-
-leading-8
-
-mt-5
-
-"
-
->
-
-I have hands-on experience through multiple internships and
-projects, building AI-powered applications involving predictive
-analytics, computer vision, NLP, automation, and full-stack
-development.
-
-</p>
-
-
-<p
-
-className="
-
-text-gray-400
-
-text-lg
-
-leading-8
-
-mt-5
-
-"
-
->
-
-I enjoy solving real-world problems and developing
-AI-powered solutions that combine creativity,
-engineering and innovation.
-
-
-</p>
-
-
-</div>
-
-
-
-
-<div
-
-className="
-
-grid
-
-gap-5
-
-"
-
->
-
-
-{
-
-stats.map((item)=>(
-
-
-<Card
-
-key={item.label}
-
-className="text-center"
-
->
-
-
-<h2
-
-className="
-
-text-5xl
-
-font-bold
-
-gradient-text
-
-"
-
->
-
-{item.number}
-
-</h2>
-
-
-
-<p className="text-gray-300 mt-2">
-
-
-{item.label}
-
-
-</p>
-
-
-
-</Card>
-
-
-))
-
-}
-
-
-</div>
-
-
-
-</div>
-
-
-</FadeIn>
-
-
-</Container>
-
-
-</section>
-
-)
-
+  )
 
 }
 

@@ -57,9 +57,7 @@ items:[
 
 "Pandas",
 
-"NumPy",
-
-"Computer Vision"
+"NumPy"
 
 ]
 
@@ -84,11 +82,7 @@ items:[
 
 "GitHub",
 
-"MySQL",
-
-"MongoDB",
-
-"VS Code"
+"MySQL"
 
 ]
 

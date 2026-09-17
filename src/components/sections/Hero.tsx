@@ -123,46 +123,35 @@ Deepak Kumar Jha
 
 
 <TypeAnimation
+  sequence={[
+    "AI & Data Science Engineer",
+    1800,
 
+    "Machine Learning Developer",
+    1800,
 
-sequence={[
+    "Generative AI Developer",
+    1800,
 
+    "Agentic AI Developer",
+    1800,
 
-"AI & Data Science Engineer",
+    "AI & NLP Developer",
+    1800,
 
-2000,
+    "Full Stack Developer",
+    1800,
 
-
-"Machine Learning Developer",
-
-2000,
-
-
-
-"Problem Solver",
-
-2000,
-
-
-]}
-
-
-speed={50}
-
-
-repeat={Infinity}
-
-
-className="
-
-text-2xl
-
-text-white
-
-font-semibold
-
-"
-
+    "Problem Solver",
+    1800,
+  ]}
+  speed={50}
+  repeat={Infinity}
+  className="
+    text-2xl
+    text-white
+    font-semibold
+  "
 />
 
 
@@ -256,8 +245,9 @@ target="_blank"
 
 
 <a
-href="https://www.linkedin.com/in/deepak-kumar-jha-a648553288"
+href="https://www.linkedin.com/in/deepak-kumar-jha-a64855328"
 target="_blank"
+rel="noopener noreferrer"
 >
 
 <FaLinkedin size={30}/>

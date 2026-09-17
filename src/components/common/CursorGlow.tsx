@@ -1,129 +1,102 @@
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
 
+function CursorGlow() {
+  const [isPointerDevice, setIsPointerDevice] = useState(false)
 
-function CursorGlow(){
+  const [position, setPosition] = useState({
+    x: 0,
+    y: 0
+  })
 
-const [isDesktop,setIsDesktop]=useState(false)
+  useEffect(() => {
+    // Detect whether the device actually has a fine pointer/mouse.
+    const checkPointer = () => {
+      setIsPointerDevice(
+        window.matchMedia("(pointer: fine)").matches
+      )
+    }
 
-const [position,setPosition]=useState({
-x:0,
-y:0
-})
+    checkPointer()
 
+    window.addEventListener("resize", checkPointer)
 
-useEffect(()=>{
+    return () => {
+      window.removeEventListener("resize", checkPointer)
+    }
+  }, [])
 
-const check=()=>{
+  useEffect(() => {
+    if (!isPointerDevice) return
 
-setIsDesktop(window.innerWidth > 768)
+    const move = (e: MouseEvent) => {
+      setPosition({
+        x: e.clientX,
+        y: e.clientY
+      })
+    }
 
-}
+    window.addEventListener("mousemove", move)
 
-check()
+    return () => {
+      window.removeEventListener("mousemove", move)
+    }
+  }, [isPointerDevice])
 
-window.addEventListener("resize",check)
+  if (!isPointerDevice) return null
 
-return()=>window.removeEventListener("resize",check)
+  return (
+    <>
+      {/* Outer cursor glow */}
+      <motion.div
+        className="
+          fixed
+          top-0
+          left-0
+          w-20
+          h-20
+          rounded-full
+          pointer-events-none
+          z-[999]
+          border
+          border-cyan-400/40
+          shadow-[0_0_40px_rgba(34,211,238,.6)]
+        "
+        animate={{
+          x: position.x - 40,
+          y: position.y - 40
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 120,
+          damping: 20
+        }}
+      />
 
-},[])
-
-
-
-useEffect(()=>{
-
-if(!isDesktop) return
-
-
-const move=(e:MouseEvent)=>{
-
-setPosition({
-x:e.clientX,
-y:e.clientY
-})
-
-}
-
-
-window.addEventListener("mousemove",move)
-
-return()=>{
-
-window.removeEventListener("mousemove",move)
-
-}
-
-},[isDesktop])
-
-
-
-if(!isDesktop) return null
-
-
-return(
-
-<>
-
-<motion.div
-
-className="
-fixed
-top-0
-left-0
-w-20
-h-20
-rounded-full
-pointer-events-none
-z-[999]
-border
-border-cyan-400/40
-shadow-[0_0_40px_rgba(34,211,238,.6)]
-"
-
-animate={{
-x:position.x-40,
-y:position.y-40
-}}
-
-transition={{
-type:"spring",
-stiffness:120,
-damping:20
-}}
-
-/>
-
-
-<motion.div
-
-className="
-fixed
-top-0
-left-0
-w-3
-h-3
-rounded-full
-pointer-events-none
-z-[1000]
-bg-cyan-300
-shadow-[0_0_20px_#22d3ee]
-"
-
-animate={{
-x:position.x-6,
-y:position.y-6
-}}
-
-transition={{
-duration:.05
-}}
-
-/>
-
-</>
-
-)
-
+      {/* Cursor center */}
+      <motion.div
+        className="
+          fixed
+          top-0
+          left-0
+          w-3
+          h-3
+          rounded-full
+          pointer-events-none
+          z-[1000]
+          bg-cyan-300
+          shadow-[0_0_20px_#22d3ee]
+        "
+        animate={{
+          x: position.x - 6,
+          y: position.y - 6
+        }}
+        transition={{
+          duration: 0.05
+        }}
+      />
+    </>
+  )
 }
 
 export default CursorGlow
