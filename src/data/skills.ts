@@ -1,51 +1,34 @@
 export const skills = {
 
+  languages: [
+    "Python",
+    "Java",
+    "C++",
+    "JavaScript",
+    "TypeScript",
+    "SQL"
+  ],
 
-languages:[
+  ai: [
+    "Machine Learning",
+    "Deep Learning",
+    "Computer Vision",
+    "NLP",
+    "Data Analysis",
+    "Generative AI",
+    "Agentic AI",
+    "Predictive Analytics"
+  ],
 
-"Python",
+  tools: [
+    "Git",
+    "GitHub",
+    "MySQL",
+    "IBM Cloud",
+    "Power BI",
+    "Tableau",
+    "Excel",
+    "ChatGPT"
+  ]
 
-"Java",
-
-"C++",
-
-"JavaScript",
-
-"TypeScript",
-
-"SQL"
-
-],
-
-
-ai:[
-
-"Machine Learning",
-
-"Deep Learning",
-
-"Computer Vision",
-
-"NLP",
-
-"Data Analysis"
-
-],
-
-
-tools:[
-
-"Git",
-
-"GitHub",
-
-"VS Code",
-
-"MySQL",
-
-"Jupyter Notebook"
-
-]
-
-
-}
+};
