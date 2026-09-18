@@ -4,9 +4,9 @@ export const skills = {
     "Python",
     "Java",
     "C++",
+    "SQL",
     "JavaScript",
-    "TypeScript",
-    "SQL"
+    "TypeScript"
   ],
 
   ai: [
@@ -14,21 +14,22 @@ export const skills = {
     "Deep Learning",
     "Computer Vision",
     "NLP",
-    "Data Analysis",
     "Generative AI",
     "Agentic AI",
-    "Predictive Analytics"
+    "Data Analysis"
   ],
 
   tools: [
+    "TensorFlow",
+    "Scikit-Learn",
+    "Pandas",
+    "Django",
+    "FastAPI",
     "Git",
     "GitHub",
     "MySQL",
-    "IBM Cloud",
     "Power BI",
-    "Tableau",
-    "Excel",
-    "ChatGPT"
+    "Excel"
   ]
 
 };

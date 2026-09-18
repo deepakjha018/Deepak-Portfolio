@@ -6,87 +6,40 @@ import SectionTitle from "../ui/SectionTitle"
 
 import { motion } from "framer-motion"
 
-import { 
-FaCode,
-FaBrain,
-FaTools
+import {
+  FaCode,
+  FaBrain,
+  FaTools
 } from "react-icons/fa"
+
+import { skills } from "../../data/skills"
+
 
 const skillGroups = [
 
-{
+  {
+    title:"Languages",
 
-title:"Languages",
+    icon:<FaCode/>,
 
-icon:<FaCode/>,
+    items:skills.languages
+  },
 
-items:[
+  {
+    title:"AI & Data Science",
 
-"Python",
+    icon:<FaBrain/>,
 
-"Java",
+    items:skills.ai
+  },
 
-"C++",
+  {
+    title:"Tools & Technologies",
 
-"JavaScript",
+    icon:<FaTools/>,
 
-"TypeScript",
-
-"SQL"
-
-]
-
-},
-
-
-{
-
-title:"AI & Data Science",
-
-icon:<FaBrain/>,
-
-items:[
-
-"Machine Learning",
-
-"Deep Learning",
-
-"TensorFlow",
-
-"Scikit-Learn",
-
-"Pandas",
-
-"NumPy"
-
-]
-
-},
-
-
-{
-
-title:"Tools & Technologies",
-
-icon:<FaTools/>,
-
-items:[
-
-"React",
-
-"Django",
-
-"FastAPI",
-
-"Git",
-
-"GitHub",
-
-"MySQL"
-
-]
-
-}
+    items:skills.tools
+  }
 
 ]
 
@@ -94,322 +47,314 @@ items:[
 function Skills(){
 
 
-return(
+  return(
 
-<section id="skills">
+    <section id="skills">
 
 
-<Container>
+      <Container>
 
 
-<SectionTitle
+        <SectionTitle
 
-title="Skills"
+          title="Skills"
 
-subtitle="Technologies I work with"
+          subtitle="Technologies I work with"
 
-/>
+        />
 
 
+        <motion.div
 
-<motion.div
+          initial="hidden"
 
-initial="hidden"
+          whileInView="show"
 
-whileInView="show"
+          viewport={{
+            once:true,
+            amount:.2
+          }}
 
-viewport={{
-once:true,
-amount:.2
-}}
+          variants={{
 
-variants={{
+            hidden:{},
 
-hidden:{},
+            show:{
 
-show:{
+              transition:{
+                staggerChildren:.2
+              }
 
-transition:{
-staggerChildren:.2
-}
+            }
 
-}
+          }}
 
-}}
+          className="
 
-className="
+            grid
 
-grid
+            grid-cols-1
 
-grid-cols-1
+            md:grid-cols-3
 
-md:grid-cols-3
+            gap-8
 
-gap-8
+          "
 
-"
+        >
 
->
 
+          {
 
-{
+            skillGroups.map((group)=>(
 
 
-skillGroups.map((group)=>(
+              <motion.div
 
+                key={group.title}
 
-<motion.div
+                variants={{
 
-key={group.title}
+                  hidden:{
+                    opacity:0,
+                    y:50
+                  },
 
-variants={{
+                  show:{
+                    opacity:1,
+                    y:0
+                  }
 
-hidden:{
-opacity:0,
-y:50
-},
+                }}
 
-show:{
-opacity:1,
-y:0
-}
+                transition={{
+                  duration:.6
+                }}
 
-}}
+              >
 
-transition={{
-duration:.6
-}}
 
->
+                <Card
 
+                  className="
 
-<Card
+                    relative
 
-className="
+                    overflow-hidden
 
-relative
+                    group
 
-overflow-hidden
+                  "
 
-group
+                >
 
-"
 
->
-    <motion.div
+                  {/* Hover Gradient */}
 
-className="
+                  <motion.div
 
-absolute
+                    className="
 
-inset-0
+                      absolute
 
-bg-gradient-to-br
+                      inset-0
 
-from-cyan-400/10
+                      bg-gradient-to-br
 
-to-purple-500/10
+                      from-cyan-400/10
 
-opacity-0
+                      to-purple-500/10
 
-group-hover:opacity-100
+                      opacity-0
 
-transition
+                      group-hover:opacity-100
 
-duration-500
+                      transition
 
-"
+                      duration-500
 
-/>
+                    "
 
+                  />
 
-<div
 
-className="
+                  <div
 
-relative
+                    className="
 
-z-10
+                      relative
 
-flex
+                      z-10
 
-items-center
+                      flex
 
-gap-4
+                      items-center
 
-mb-8
+                      gap-4
 
-"
+                      mb-8
 
->
+                    "
 
+                  >
 
-<motion.div
 
-whileHover={{
+                    <motion.div
 
-rotate:360,
+                      whileHover={{
 
-scale:1.2
+                        rotate:360,
 
-}}
+                        scale:1.2
 
-transition={{
+                      }}
 
-duration:.6
+                      transition={{
 
-}}
+                        duration:.6
 
-className="
+                      }}
 
-text-3xl
+                      className="
 
-text-cyan-400
+                        text-3xl
 
-drop-shadow-[0_0_15px_#22d3ee]
+                        text-cyan-400
 
-"
+                        drop-shadow-[0_0_15px_#22d3ee]
 
->
+                      "
 
+                    >
 
-{group.icon}
+                      {group.icon}
 
+                    </motion.div>
 
-</motion.div>
 
+                    <h3
 
+                      className="
 
-<h3
+                        text-2xl
 
-className="
+                        font-bold
 
-text-2xl
+                        text-white
 
-font-bold
+                      "
 
-text-white
+                    >
 
-"
+                      {group.title}
 
->
+                    </h3>
 
-{group.title}
 
-</h3>
+                  </div>
 
 
-</div>
+                  <div
 
+                    className="
 
+                      relative
 
+                      z-10
 
-<div
+                      flex
 
-className="
+                      flex-wrap
 
-relative
+                      gap-3
 
-z-10
+                    "
 
-flex
+                  >
 
-flex-wrap
 
-gap-3
+                    {
 
-"
+                      group.items.map(skill=>(
 
->
 
+                        <motion.span
 
-{
+                          whileHover={{
 
+                            scale:1.12,
 
-group.items.map(skill=>(
+                            y:-5
 
+                          }}
 
-<motion.span
+                          whileTap={{
 
-whileHover={{
+                            scale:.95
 
-scale:1.12,
+                          }}
 
-y:-5
+                          key={skill}
 
-}}
+                          className="
 
-whileTap={{
+                            px-4
 
-scale:.95
+                            py-2
 
-}}
+                            rounded-full
 
-key={skill}
+                            bg-cyan-500/10
 
-className="
+                            border
 
-px-4
+                            border-cyan-400/30
 
-py-2
+                            text-gray-300
 
-rounded-full
+                            hover:bg-cyan-400/20
 
-bg-cyan-500/10
+                            hover:shadow-[0_0_20px_rgba(34,211,238,.5)]
 
-border
+                            transition
 
-border-cyan-400/30
+                          "
 
-text-gray-300
+                        >
 
-hover:bg-cyan-400/20
+                          {skill}
 
-hover:shadow-[0_0_20px_rgba(34,211,238,.5)]
+                        </motion.span>
 
-transition
 
-"
+                      ))
 
->
+                    }
 
 
-{skill}
+                  </div>
 
 
-</motion.span>
+                </Card>
 
 
-))
+              </motion.div>
 
 
-}
+            ))
 
+          }
 
-</div>
 
+        </motion.div>
 
-</Card>
 
+      </Container>
 
-</motion.div>
 
+    </section>
 
-))
-
-}
-
-
-</motion.div>
-
-
-</Container>
-
-
-</section>
-
-
-)
+  )
 
 }
 
